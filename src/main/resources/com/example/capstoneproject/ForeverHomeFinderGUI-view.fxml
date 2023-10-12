@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="278.0" prefWidth="327.0" spacing="20.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.capstoneproject.ForeverHomeFinderController">
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+  </padding>
+
+  <!-- Button goes first -->
+  <Button fx:id="loginButton" onAction="#onHelloButtonClick" text="Log In">
+      <font>
+         <Font name="Comic Sans MS" size="12.0" />
+      </font></Button>
+
+  <!-- Password Tag -->
+  <Label fx:id="passwordText" translateX="-125.0" translateY="85.0" visible="false" />
+
+  <!-- TextField for user to input username (initially not visible) -->
+  <TextField fx:id="username" prefHeight="26.0" prefWidth="166.0" promptText="Please enter your username" translateX="30.0" translateY="-5.0" visible="false">
+      <font>
+         <Font name="Comic Sans MS" size="12.0" />
+      </font></TextField>
+
+    <!-- Username Tag -->
+  <Label fx:id="usernameText" translateX="-125.0" translateY="-45.0" visible="false" />
+
+  <!-- TextField for user to input password (initially not visible) -->
+  <PasswordField fx:id="password" promptText="Please enter your password" translateX="30.0" translateY="-40.0" visible="false">
+      <font>
+         <Font name="Comic Sans MS" size="12.0" />
+      </font></PasswordField>
+
+    <CheckBox fx:id="passwordVisibleBox" onAction="#checkedPasswordBox" text="Show Password" translateX="-100.0" translateY="-50.0" visible="false" />
+
+    <!-- TextField for user to Password Visibility (initially not visible) -->
+    <TextField fx:id="visiblePassword" translateX="30.0" translateY="-124.0" visible="false">
+        <font>
+            <Font name="Comic Sans MS" size="12.0" />
+        </font>
+    </TextField>
+
+  <!-- Label goes below the button -->
+  <Label fx:id="welcomeText" />
+
+</VBox>
