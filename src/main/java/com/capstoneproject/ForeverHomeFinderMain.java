@@ -11,7 +11,7 @@ public class ForeverHomeFinderMain extends Application {
     @Override
     public void start(Stage stage) throws IOException {//Sets up GUI for window
         FXMLLoader fxmlLoader = new FXMLLoader(ForeverHomeFinderMain.class.getResource("ForeverHomeFinderGUI-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 420, 340);
+        Scene scene = new Scene(fxmlLoader.load(), 640, 480);
         stage.setTitle("Forever Home Finder");//Sets title for window
         stage.setScene(scene);
         stage.show();

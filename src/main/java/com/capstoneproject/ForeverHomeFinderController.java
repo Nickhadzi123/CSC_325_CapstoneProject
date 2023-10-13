@@ -23,12 +23,19 @@ public class ForeverHomeFinderController {
     private TextField visiblePassword;
     @FXML
     private CheckBox passwordVisibleBox;
+    @FXML
+    private Button escapeButton;
 
     //Universal Integer Width Variable
-    private int textBoxWidth = 200;
+    private final int TEXTBOXWIDTH = 200;
+
+    //Boolean if you press the escape button
+    private boolean wentBackToScreen;
 
     @FXML
-    protected void onHelloButtonClick() { //When Button is clicked, this function will activate the initialization of login UI
+    protected void onLoginButtonClick() { //When Button is clicked, this function will activate the initialization of login UI
+
+        escapeButton.setVisible(true);
 
         //Will make the GUI elements visible
         loginButton.setVisible(false);
@@ -39,17 +46,17 @@ public class ForeverHomeFinderController {
         passwordText.setVisible(true);
 
         //Will set the width of the Username box
-        username.prefWidth(textBoxWidth);
-        username.setMaxWidth(textBoxWidth);
+        username.prefWidth(TEXTBOXWIDTH);
+        username.setMaxWidth(TEXTBOXWIDTH);
         username.requestLayout();
 
         //Will set the width of the Password box
-        password.prefWidth(textBoxWidth);
-        password.setMaxWidth(textBoxWidth);
+        password.prefWidth(TEXTBOXWIDTH);
+        password.setMaxWidth(TEXTBOXWIDTH);
         password.requestLayout();
 
         //Will set width of the visiblePassword Box
-        visiblePassword.setMaxWidth(textBoxWidth);
+        visiblePassword.setMaxWidth(TEXTBOXWIDTH);
 
         //Title text for username and password elements respectively
         usernameText.setText("Username: ");
@@ -57,6 +64,31 @@ public class ForeverHomeFinderController {
 
         //Will set the same text properties as the password variable for the visiblePassword
         password.textProperty().bindBidirectional(visiblePassword.textProperty());
+
+        if(wentBackToScreen){
+            visiblePassword.setVisible(false);
+        }
+    }
+
+    @FXML
+    protected void onEscapeButtonClick(){//If the button is clicked, the user will be brought back to login/sign in screen
+        //Will change the visibility of the objects
+        escapeButton.setVisible(false);
+        loginButton.setVisible(true);
+        passwordVisibleBox.setVisible(false);
+        username.setVisible(false);
+        password.setVisible(false);
+        usernameText.setVisible(false);
+        passwordText.setVisible(false);
+        visiblePassword.setVisible(false);
+
+        wentBackToScreen = true;//Boolean value to switch password visibility to be hidden
+        passwordVisibleBox.setSelected(false); //Will uncheck the visible password box
+
+        //Will clear the text from the username and password boxes
+        username.clear();
+        password.clear();
+        visiblePassword.clear();
     }
 
     @FXML
