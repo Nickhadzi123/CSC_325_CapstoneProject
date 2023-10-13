@@ -9,15 +9,15 @@ import java.io.IOException;
 
 public class ForeverHomeFinderMain extends Application {
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) throws IOException {//Sets up GUI for window
         FXMLLoader fxmlLoader = new FXMLLoader(ForeverHomeFinderMain.class.getResource("ForeverHomeFinderGUI-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 420, 340);
-        stage.setTitle("Forever Home Finder");
+        stage.setTitle("Forever Home Finder");//Sets title for window
         stage.setScene(scene);
         stage.show();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {//Main Method
         launch();
     }
 }
