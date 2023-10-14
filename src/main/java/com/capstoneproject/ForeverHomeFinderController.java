@@ -33,9 +33,18 @@ public class ForeverHomeFinderController {
     private boolean wentBackToScreen;
 
     @FXML
+    private Label welcomeText;
+
+    public void initialize() {
+        welcomeText.setText("Welcome to the Forever Home Finder App!\n   Please press the login button to login!");
+    }
+
+    @FXML
     protected void onLoginButtonClick() { //When Button is clicked, this function will activate the initialization of login UI
 
         escapeButton.setVisible(true);
+
+        welcomeText.setVisible(false);
 
         //Will make the GUI elements visible
         loginButton.setVisible(false);
@@ -81,6 +90,8 @@ public class ForeverHomeFinderController {
         usernameText.setVisible(false);
         passwordText.setVisible(false);
         visiblePassword.setVisible(false);
+
+        welcomeText.setVisible(true);
 
         wentBackToScreen = true;//Boolean value to switch password visibility to be hidden
         passwordVisibleBox.setSelected(false); //Will uncheck the visible password box

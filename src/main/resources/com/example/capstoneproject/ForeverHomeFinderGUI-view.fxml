@@ -14,8 +14,11 @@
     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
   </padding>
 
+    <!-- Greeting Tag -->
+    <Label fx:id="welcomeText" alignment="CENTER" translateY="245.0"/>
+
   <!-- Button goes first -->
-  <Button fx:id="loginButton" onAction="#onLoginButtonClick" text="Log In">
+  <Button fx:id="loginButton" onAction="#onLoginButtonClick" text="Log In" translateY="105.0">
       <font>
          <Font name="Comic Sans MS" size="12.0" />
       </font></Button>
@@ -41,14 +44,14 @@
     <CheckBox fx:id="passwordVisibleBox" onAction="#checkedPasswordBox" text="Show Password" translateX="-100.0" translateY="-50.0" visible="false" />
 
     <!-- TextField for user to Password Visibility (initially not visible) -->
-    <TextField fx:id="visiblePassword" translateX="30.0" translateY="-124.0" visible="false">
+    <TextField fx:id="visiblePassword" promptText="Please enter your password" translateX="30.0" translateY="-124.0" visible="false">
         <font>
             <Font name="Comic Sans MS" size="12.0" />
         </font>
     </TextField>
 
     <!-- TextField for user to Escape Button (initially not visible) -->
-    <Button fx:id="escapeButton" onAction="#onEscapeButtonClick" translateY="-50.0" text="Go Back" visible="false">
+    <Button fx:id="escapeButton" onAction="#onEscapeButtonClick" translateY="-90.0" text="Go Back" visible="false">
         <font>
             <Font name="Comic Sans MS" size="12.0" />
         </font>
