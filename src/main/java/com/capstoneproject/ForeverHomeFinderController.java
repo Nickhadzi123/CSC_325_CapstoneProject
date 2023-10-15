@@ -6,34 +6,41 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.paint.Color;
 
 public class ForeverHomeFinderController {
     //Initializing Variables
     @FXML
     private Button loginButton;
     @FXML
+    private Button escapeButton;
+    @FXML
+    private Button confirmButton;
+
+    @FXML
+    private Label welcomeText;
+    @FXML
     private Label usernameText;
     @FXML
     private Label passwordText;
     @FXML
+    private Label confirmationText;
+
+    @FXML
     private TextField username;
+    @FXML
+    private TextField visiblePassword;
+
     @FXML
     private PasswordField password;
     @FXML
-    private TextField visiblePassword;
-    @FXML
     private CheckBox passwordVisibleBox;
-    @FXML
-    private Button escapeButton;
 
     //Universal Integer Width Variable
     private final int TEXTBOXWIDTH = 200;
 
     //Boolean if you press the escape button
     private boolean wentBackToScreen;
-
-    @FXML
-    private Label welcomeText;
 
     public void initialize() {
         welcomeText.setText("Welcome to the Forever Home Finder App!\n   Please press the login button to login!");
@@ -45,6 +52,8 @@ public class ForeverHomeFinderController {
         escapeButton.setVisible(true);
 
         welcomeText.setVisible(false);
+
+        confirmButton.setVisible(true);
 
         //Will make the GUI elements visible
         loginButton.setVisible(false);
@@ -90,7 +99,8 @@ public class ForeverHomeFinderController {
         usernameText.setVisible(false);
         passwordText.setVisible(false);
         visiblePassword.setVisible(false);
-
+        confirmButton.setVisible(false);
+        confirmationText.setVisible(false);
         welcomeText.setVisible(true);
 
         wentBackToScreen = true;//Boolean value to switch password visibility to be hidden
@@ -112,6 +122,23 @@ public class ForeverHomeFinderController {
             //Will do the vice versa here
             visiblePassword.setVisible(false);
             password.setVisible(true);
+        }
+    }
+
+    @FXML
+    protected void loginCheck(){//Will check if the username and password is correct when pressing the confirm button
+        //Check user login
+        String inputUsername = username.getText();
+        String inputPassword = password.getText();
+
+        confirmationText.setVisible(true);
+
+        if ("Yes".equals(inputUsername) && "Yes".equals(inputPassword)) {
+            confirmationText.setText("Login Successful");
+            confirmationText.setTextFill(Color.GREEN);
+        } else {
+            confirmationText.setText("Login Failed");
+            confirmationText.setTextFill(Color.RED);
         }
     }
 }
