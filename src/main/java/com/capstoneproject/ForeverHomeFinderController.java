@@ -46,7 +46,7 @@ public class ForeverHomeFinderController {
     //Boolean if you press the escape button
     private boolean wentBackToScreen;
 
-    private UserInformation userInformation = new UserInformation();
+    private ForeverHomeFinderUser user = new ForeverHomeFinderUser();
 
     public void initialize() {
         welcomeText.setText("Welcome to the Forever Home Finder App!\n   Please press the login button to login! \n\nIf you haven't created an account with us, \n                      please sign in.");
@@ -183,21 +183,21 @@ public class ForeverHomeFinderController {
     @FXML
     protected void sendAndSetInfo() {
         //When you hit the confirm button for the sign in. It sends the information to the User Information class
-        String inputUsername = username.getText();
+        String inputUsername = userName.getText();
         String inputPassword = password.getText();
 
-        userInformation.setInfo(inputUsername, inputPassword);
+        ForeverHomeFinderUser.setInfo(inputUsername, inputPassword);
         System.out.println("Your information has been sent to our system");
     }
 
     @FXML
     protected void loginCheck(){
-        String inputUsername = username.getText();
+        String inputUsername = userName.getText();
         String inputPassword = password.getText();
 
         confirmationText.setVisible(true);
 
-        if (userInformation.getUsername().equals(inputUsername) && userInformation.getPassword().equals(inputPassword)) {
+        if (ForeverHomeFinderUser.getuserName().equals(inputUsername) && ForeverHomeFinderUser.getpassword().equals(inputPassword)) {
             confirmationText.setText("Login Successful");
             confirmationText.setTextFill(Color.GREEN);
         } else {
