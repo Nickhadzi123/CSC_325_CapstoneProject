@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a56826ec-5664-46d7-ae96-151e61a81abb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/capstoneproject/UserInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstoneproject/ForeverHomeFinderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/capstoneproject/ForeverHomeFinderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstoneproject/ForeverHomeFinderMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/capstoneproject/ForeverHomeFinderMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/capstoneproject/ForeverHomeFinderGUI-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstoneproject/UserInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/capstoneproject/UserInformation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +106,7 @@
       <workItem from="1697548977770" duration="4306000" />
       <workItem from="1697560233573" duration="1945000" />
       <workItem from="1697564060494" duration="330000" />
+      <workItem from="1697564843936" duration="107000" />
     </task>
     <servers />
   </component>
