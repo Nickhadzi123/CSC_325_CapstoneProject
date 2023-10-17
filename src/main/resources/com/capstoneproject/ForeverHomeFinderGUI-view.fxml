@@ -9,19 +9,26 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" prefHeight="278.0" prefWidth="327.0" spacing="20.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.capstoneproject.ForeverHomeFinderController">
+<VBox alignment="TOP_CENTER" prefHeight="278.0" prefWidth="327.0" spacing="20.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.capstoneproject.ForeverHomeFinderController">
   <padding>
     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
   </padding>
 
     <!-- Greeting Tag -->
-    <Label fx:id="welcomeText" alignment="CENTER" translateY="245.0"/>
+    <Label fx:id="welcomeText" alignment="CENTER" translateY="325.0"/>
 
-  <!-- Button goes first -->
+    <!-- Sign in Button goes first -->
+    <Button fx:id="signInButton" onAction="#onSignInButtonClick" text="Sign In" translateY="75.0">
+        <font>
+            <Font name="Comic Sans MS" size="12.0" />
+        </font></Button>
+
+  <!-- Login Button goes second -->
   <Button fx:id="loginButton" onAction="#onLoginButtonClick" text="Log In" translateY="105.0">
       <font>
          <Font name="Comic Sans MS" size="12.0" />
-      </font></Button>
+      </font>
+  </Button>
 
   <!-- Password Tag -->
   <Label fx:id="passwordText" translateX="-125.0" translateY="85.0" visible="false" />
@@ -39,7 +46,8 @@
   <PasswordField fx:id="password" promptText="Please enter your password" translateX="30.0" translateY="-40.0" visible="false">
       <font>
          <Font name="Comic Sans MS" size="12.0" />
-      </font></PasswordField>
+      </font>
+  </PasswordField>
 
     <CheckBox fx:id="passwordVisibleBox" onAction="#checkedPasswordBox" text="Show Password" translateX="-100.0" translateY="-50.0" visible="false" />
 
@@ -58,12 +66,19 @@
     </Button>
 
     <!-- TextField for user to Confirm Button (initially not visible) -->
-    <Button fx:id="confirmButton" onAction="#loginCheck" translateY="-120.0" text="Confirm" visible="false">
+    <Button fx:id="confirmButton" onAction="#loginCheck" translateY="-140.0" text="Confirm" visible="false">
+        <font>
+            <Font name="Comic Sans MS" size="12.0" />
+        </font>
+    </Button>
+
+    <!-- TextField for user to Confirm2 Button (initially not visible) -->
+    <Button fx:id="confirmButton2" onAction="#sendAndSetInfo" translateY="-190.0" text="Confirm" visible="false">
         <font>
             <Font name="Comic Sans MS" size="12.0" />
         </font>
     </Button>
 
     <!-- Confirmation Text Tag -->
-    <Label fx:id="confirmationText" alignment="CENTER" translateY="-350" visible="false"/>
+    <Label fx:id="confirmationText" alignment="CENTER" translateY="-380" visible="false"/>
 </VBox>

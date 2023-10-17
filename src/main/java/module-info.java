@@ -1,8 +1,8 @@
-module com.example.capstoneproject {
+module com.capstoneproject {
     requires javafx.controls;
     requires javafx.fxml;
 
 
-    opens com.example.capstoneproject to javafx.fxml;
-    exports com.example.capstoneproject;
+    opens com.capstoneproject to javafx.fxml;
+    exports com.capstoneproject;
 }

@@ -1,4 +1,4 @@
-package com.example.capstoneproject;
+package com.capstoneproject;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

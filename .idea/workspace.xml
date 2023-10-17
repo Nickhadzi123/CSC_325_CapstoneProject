@@ -5,15 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a56826ec-5664-46d7-ae96-151e61a81abb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/capstoneproject/UserInformation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/capstoneproject/ForeverHomeFinderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/capstoneproject/ForeverHomeFinderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/capstoneproject/ForeverHomeFinderMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/capstoneproject/ForeverHomeFinderMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/capstoneproject/ForeverHomeFinderGUI-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/capstoneproject/ForeverHomeFinderGUI-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/capstoneproject/ForeverHomeFinderGUI-view.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,11 +63,11 @@
 }</component>
   <component name="RunManager">
     <configuration name="ForeverHomeFinderMain" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.capstoneproject.ForeverHomeFinderMain" />
+      <option name="MAIN_CLASS_NAME" value="com.capstoneproject.ForeverHomeFinderMain" />
       <module name="CapstoneProject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.capstoneproject.*" />
+          <option name="PATTERN" value="com.capstoneproject.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -98,10 +108,19 @@
       <workItem from="1697308496599" duration="2439000" />
       <workItem from="1697310944836" duration="9000" />
       <workItem from="1697310959909" duration="4153000" />
+      <workItem from="1697409140997" duration="1685000" />
+      <workItem from="1697548977770" duration="4306000" />
+      <workItem from="1697560233573" duration="1945000" />
+      <workItem from="1697564060494" duration="330000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CSC_325_CapstoneProject$ForeverHomeFinderMain.ic" NAME="ForeverHomeFinderMain Coverage Results" MODIFIED="1697552603008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.capstoneproject.*</FILTER>
+    </SUITE>
   </component>
 </project>
