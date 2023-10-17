@@ -106,4 +106,9 @@ public class ForeverHomeFinderUser {
     public void setLon(float lon) {
         this.lon = lon;
     }
+    public void setInfo(String userName, String password){
+        this.userName = userName;
+        this.password = password;
+        System.out.println("Info set: Username - " + this.userName + ", Password - " + this.password);
+    }
 }
