@@ -35,11 +35,12 @@ public class ForeverHomeFinderUser {
         this.lon = lon;
     }
 
-    public String getUserName() {
+    public String getuserName() {
         return userName;
     }
 
-    public void setUserName(String userName) {
+    public void setuserName(String userName) {
+
         this.userName = userName;
     }
 

@@ -1,31 +1,31 @@
 package com.capstoneproject;
 
 public class ForeverHomeFinderEmployee {
-    private String userName;
+    private String employeeName;
     private String password;
     private String company;
     private int id;
 
     public ForeverHomeFinderEmployee() {
-        this.userName = "";
+        this.employeeName = "";
         this.password = "";
         this.company = "";
         this.id = 0;
     }
 
-    public ForeverHomeFinderEmployee(String userName, String password, String company, int id) {
-        this.userName = userName;
+    public ForeverHomeFinderEmployee(String employeeName, String password, String company, int id) {
+        this.employeeName = employeeName;
         this.password = password;
         this.company = company;
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getEmployeeName() {
+        return employeeName;
     }
 
     public void setUserName(String userName) {
-        this.userName = userName;
+        this.employeeName = userName;
     }
 
     public String getPassword() {

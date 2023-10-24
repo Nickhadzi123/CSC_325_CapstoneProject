@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a56826ec-5664-46d7-ae96-151e61a81abb" name="Changes" comment="Created FHFEmployee class and created the setters and getters with the constructor">
+    <list default="true" id="a56826ec-5664-46d7-ae96-151e61a81abb" name="Changes" comment="userName bad">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/capstoneproject/ForeverHomeFinderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/capstoneproject/ForeverHomeFinderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/capstoneproject/ForeverHomeFinderGUI-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/capstoneproject/ForeverHomeFinderGUI-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstoneproject/ForeverHomeFinderEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/capstoneproject/ForeverHomeFinderEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstoneproject/ForeverHomeFinderUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/capstoneproject/ForeverHomeFinderUser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697568448204</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="userName bad">
+      <option name="closed" value="true" />
+      <created>1697568780162</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1697568780162</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,7 +152,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="creating setters getters and constructors for the User class" />
     <MESSAGE value="Created FHFEmployee class and created the setters and getters with the constructor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created FHFEmployee class and created the setters and getters with the constructor" />
+    <MESSAGE value="userName bad" />
+    <option name="LAST_COMMIT_MESSAGE" value="userName bad" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CSC_325_CapstoneProject$ForeverHomeFinderMain.ic" NAME="ForeverHomeFinderMain Coverage Results" MODIFIED="1697552603008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

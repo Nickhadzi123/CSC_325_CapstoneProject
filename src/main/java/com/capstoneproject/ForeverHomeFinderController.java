@@ -31,7 +31,7 @@ public class ForeverHomeFinderController {
     private Label confirmationText;
 
     @FXML
-    private TextField username;
+    private TextField userName;
     @FXML
     private TextField visiblePassword;
 
@@ -65,15 +65,15 @@ public class ForeverHomeFinderController {
         loginButton.setVisible(false);
         signInButton.setVisible(false);
         passwordVisibleBox.setVisible(true);
-        username.setVisible(true);
+        userName.setVisible(true);
         password.setVisible(true);
         usernameText.setVisible(true);
         passwordText.setVisible(true);
 
         //Will set the width of the Username box
-        username.prefWidth(TEXTBOXWIDTH);
-        username.setMaxWidth(TEXTBOXWIDTH);
-        username.requestLayout();
+        userName.prefWidth(TEXTBOXWIDTH);
+        userName.setMaxWidth(TEXTBOXWIDTH);
+        userName.requestLayout();
 
         //Will set the width of the Password box
         password.prefWidth(TEXTBOXWIDTH);
@@ -107,7 +107,7 @@ public class ForeverHomeFinderController {
 
         passwordVisibleBox.setVisible(false);
 
-        username.setVisible(false);
+        userName.setVisible(false);
         password.setVisible(false);
 
         usernameText.setVisible(false);
@@ -121,7 +121,7 @@ public class ForeverHomeFinderController {
         passwordVisibleBox.setSelected(false); //Will uncheck the visible password box
 
         //Will clear the text from the username and password boxes
-        username.clear();
+        userName.clear();
         password.clear();
         visiblePassword.clear();
     }
@@ -150,15 +150,15 @@ public class ForeverHomeFinderController {
         loginButton.setVisible(false);
         signInButton.setVisible(false);
         passwordVisibleBox.setVisible(true);
-        username.setVisible(true);
+        userName.setVisible(true);
         password.setVisible(true);
         usernameText.setVisible(true);
         passwordText.setVisible(true);
 
         //Will set the width of the Username box
-        username.prefWidth(TEXTBOXWIDTH);
-        username.setMaxWidth(TEXTBOXWIDTH);
-        username.requestLayout();
+        userName.prefWidth(TEXTBOXWIDTH);
+        userName.setMaxWidth(TEXTBOXWIDTH);
+        userName.requestLayout();
 
         //Will set the width of the Password box
         password.prefWidth(TEXTBOXWIDTH);
@@ -186,7 +186,7 @@ public class ForeverHomeFinderController {
         String inputUsername = userName.getText();
         String inputPassword = password.getText();
 
-        ForeverHomeFinderUser.setInfo(inputUsername, inputPassword);
+        user.setInfo(inputUsername, inputPassword);
         System.out.println("Your information has been sent to our system");
     }
 
@@ -197,7 +197,7 @@ public class ForeverHomeFinderController {
 
         confirmationText.setVisible(true);
 
-        if (ForeverHomeFinderUser.getuserName().equals(inputUsername) && ForeverHomeFinderUser.getpassword().equals(inputPassword)) {
+        if (user.getuserName().equals(inputUsername) && user.getPassword().equals(inputPassword)) {
             confirmationText.setText("Login Successful");
             confirmationText.setTextFill(Color.GREEN);
         } else {
