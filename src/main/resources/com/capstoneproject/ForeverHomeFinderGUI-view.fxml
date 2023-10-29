@@ -33,6 +33,10 @@
   <!-- Password Tag -->
   <Label fx:id="passwordText" translateX="-125.0" translateY="85.0" visible="false" />
 
+
+    <!-- Password Confirm Tag -->
+    <Label fx:id="passwordConfirmText" translateX="-125.0" translateY="85.0" visible="false" />
+
   <!-- TextField for user to input username (initially not visible) -->
   <TextField fx:id="userName" prefHeight="26.0" prefWidth="166.0" promptText="Please enter your username" translateX="30.0" translateY="-5.0" visible="false">
       <font>
@@ -48,6 +52,13 @@
          <Font name="Comic Sans MS" size="12.0" />
       </font>
   </PasswordField>
+
+    <!-- TextField for user to input password (initially not visible) -->
+    <PasswordField fx:id="passwordConfirm" promptText="Please confirm your password" translateX="30.0" translateY="-45.0" visible="false">
+        <font>
+            <Font name="Comic Sans MS" size="12.0" />
+        </font>
+    </PasswordField>
 
     <CheckBox fx:id="passwordVisibleBox" onAction="#checkedPasswordBox" text="Show Password" translateX="-100.0" translateY="-50.0" visible="false" />
 

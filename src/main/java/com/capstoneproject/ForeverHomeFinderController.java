@@ -28,6 +28,8 @@ public class ForeverHomeFinderController {
     @FXML
     private Label passwordText;
     @FXML
+    private Label passwordConfirmText;
+    @FXML
     private Label confirmationText;
 
     @FXML
@@ -37,6 +39,8 @@ public class ForeverHomeFinderController {
 
     @FXML
     private PasswordField password;
+    @FXML
+    private PasswordField passwordConfirm;
     @FXML
     private CheckBox passwordVisibleBox;
 
@@ -69,6 +73,7 @@ public class ForeverHomeFinderController {
         password.setVisible(true);
         usernameText.setVisible(true);
         passwordText.setVisible(true);
+        passwordConfirmText.setVisible(false);
 
         //Will set the width of the Username box
         userName.prefWidth(TEXTBOXWIDTH);
@@ -86,6 +91,7 @@ public class ForeverHomeFinderController {
         //Title text for username and password elements respectively
         usernameText.setText("Username: ");
         passwordText.setText("Password: ");
+        passwordConfirmText.setText("Confirm Password: ");
 
         //Will set the same text properties as the password variable for the visiblePassword
         password.textProperty().bindBidirectional(visiblePassword.textProperty());
@@ -109,6 +115,9 @@ public class ForeverHomeFinderController {
 
         userName.setVisible(false);
         password.setVisible(false);
+        passwordConfirmText.setVisible(false);
+
+        passwordConfirm.setVisible(false);
 
         usernameText.setVisible(false);
         passwordText.setVisible(false);
@@ -154,6 +163,7 @@ public class ForeverHomeFinderController {
         password.setVisible(true);
         usernameText.setVisible(true);
         passwordText.setVisible(true);
+        passwordConfirmText.setVisible(true);
 
         //Will set the width of the Username box
         userName.prefWidth(TEXTBOXWIDTH);
@@ -164,6 +174,12 @@ public class ForeverHomeFinderController {
         password.prefWidth(TEXTBOXWIDTH);
         password.setMaxWidth(TEXTBOXWIDTH);
         password.requestLayout();
+
+        passwordConfirm.prefWidth(TEXTBOXWIDTH);
+        passwordConfirm.setMaxWidth(TEXTBOXWIDTH);
+        passwordConfirm.requestLayout();
+
+        passwordConfirm.setVisible(true);
 
         //Will set width of the visiblePassword Box
         visiblePassword.setMaxWidth(TEXTBOXWIDTH);
