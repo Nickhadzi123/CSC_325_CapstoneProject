@@ -43,7 +43,7 @@ public class ForeverHomeFinderController {
     private PasswordField passwordConfirm;
     @FXML
     private CheckBox passwordVisibleBox;
-
+//Declan2
     //Universal Integer Width Variable
     private final int TEXTBOXWIDTH = 200;
 
