@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a56826ec-5664-46d7-ae96-151e61a81abb" name="Changes" comment="userName bad">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_17_2023_1_59_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_17_2023_1_59_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/capstoneproject/ForeverHomeFinderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/capstoneproject/ForeverHomeFinderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/capstoneproject/ForeverHomeFinderGUI-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/capstoneproject/ForeverHomeFinderGUI-view.fxml" afterDir="false" />
@@ -54,12 +54,15 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Declan",
-    "last_opened_file_path": "C:/Users/aaron/IdeaProjects/TipCalculator/CSC_325_CapstoneProject",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/aaron/Desktop/CSC_325_CapstoneProject",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -73,19 +76,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="CSC_325_CapstoneProject" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="CSC_325_CapstoneProject" />
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -114,6 +104,16 @@
       <workItem from="1697548977770" duration="4306000" />
       <workItem from="1697560233573" duration="1945000" />
       <workItem from="1697564060494" duration="330000" />
+      <workItem from="1698609714917" duration="43000" />
+      <workItem from="1698874715893" duration="129000" />
+      <workItem from="1698875399201" duration="29000" />
+      <workItem from="1698878747063" duration="49000" />
+      <workItem from="1699228469204" duration="6000" />
+      <workItem from="1699228489220" duration="76000" />
+      <workItem from="1699228651654" duration="5000" />
+      <workItem from="1699228763045" duration="63000" />
+      <workItem from="1699228869675" duration="52000" />
+      <workItem from="1699228988345" duration="5301000" />
     </task>
     <task id="LOCAL-00001" summary="creating setters getters and constructors for the User class">
       <option name="closed" value="true" />
