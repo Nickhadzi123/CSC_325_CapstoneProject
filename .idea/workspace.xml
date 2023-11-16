@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a56826ec-5664-46d7-ae96-151e61a81abb" name="Changes" comment="userName bad">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/capstoneproject/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/capstoneproject/MainApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/capstoneproject/login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstoneproject/ForeverHomeFinderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/capstoneproject/ForeverHomeFinderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/capstoneproject/ForeverHomeFinderGUI-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/capstoneproject/ForeverHomeFinderGUI-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstoneproject/ForeverHomeFinderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstoneproject/ForeverHomeFinderMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstoneproject/UserInformation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/capstoneproject/ForeverHomeFinderGUI-view.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +60,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/aaron/Desktop/CSC_325_CapstoneProject",
+    "last_opened_file_path": "C:/Users/nickh/IdeaProjects/CSC_325_CapstoneProject/src/main/resources/com/capstoneproject",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -66,6 +71,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nickh\IdeaProjects\CSC_325_CapstoneProject\src\main\resources\com\capstoneproject" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="ForeverHomeFinderMain" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.capstoneproject.ForeverHomeFinderMain" />
@@ -114,6 +124,10 @@
       <workItem from="1699228763045" duration="63000" />
       <workItem from="1699228869675" duration="52000" />
       <workItem from="1699228988345" duration="5301000" />
+      <workItem from="1699545206034" duration="507000" />
+      <workItem from="1699633926772" duration="99000" />
+      <workItem from="1699988232448" duration="657000" />
+      <workItem from="1700161148831" duration="706000" />
     </task>
     <task id="LOCAL-00001" summary="creating setters getters and constructors for the User class">
       <option name="closed" value="true" />
