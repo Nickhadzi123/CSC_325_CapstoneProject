@@ -9,6 +9,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.util.ArrayList;
+
 public class LoginController {
 
     @FXML
@@ -20,6 +22,11 @@ public class LoginController {
     private ImageView logoImageView;
     private ForeverHomeFinderMain mainApp;
 
+    private ArrayList<User> userList;
+
+    public void setUserList(ArrayList<User> userList) {
+        this.userList = userList;
+    }
     public void initialize() {
         // This method will be automatically called when the FXML is loaded
         Image image = new Image(getClass().getResourceAsStream("/FHFlogo.png"));

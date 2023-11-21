@@ -1,6 +1,6 @@
 package com.capstoneproject;
 
-public class ForeverHomeFinderUser {
+public class User {
     private String userName;
     private String password;
     private String email;
@@ -8,10 +8,9 @@ public class ForeverHomeFinderUser {
     private String lName;
     private String phone;
     private int age;
-    private float lat;
-    private float lon;
+    private String address;
     //constructor for User
-    public ForeverHomeFinderUser() {
+    public User() {
         this.userName = "";
         this.password = "";
         this.email = "";
@@ -19,11 +18,10 @@ public class ForeverHomeFinderUser {
         this.lName = "";
         this.phone = "";
         this.age = 0;
-        this.lat = 0;
-        this.lon = 0;
+        this.address = "";
     }
 
-    public ForeverHomeFinderUser(String userName, String password, String email, String fName, String lName, String phone, int age, float lat, float lon) {
+    public User(String userName, String password, String email, String fName, String lName, String phone, int age, String address) {
         this.userName = userName;
         this.password = password;
         this.email = email;
@@ -31,8 +29,7 @@ public class ForeverHomeFinderUser {
         this.lName = lName;
         this.phone = phone;
         this.age = age;
-        this.lat = lat;
-        this.lon = lon;
+        this.address = address;
     }
 
     public String getuserName() {
@@ -92,21 +89,14 @@ public class ForeverHomeFinderUser {
         this.age = age;
     }
 
-    public float getLat() {
-        return lat;
+    public String getAddress() {
+        return address;
     }
 
-    public void setLat(float lat) {
-        this.lat = lat;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public float getLon() {
-        return lon;
-    }
-
-    public void setLon(float lon) {
-        this.lon = lon;
-    }
     public void setInfo(String userName, String password){
         this.userName = userName;
         this.password = password;
