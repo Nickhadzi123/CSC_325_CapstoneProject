@@ -1,44 +1,44 @@
 package com.capstoneproject;
 
 public class User {
-    private String userName;
+    private String username;
     private String password;
     private String email;
-    private String fName;
-    private String lName;
+    private String firstName;
+    private String lastName;
     private String phone;
     private int age;
     private String address;
     //constructor for User
     public User() {
-        this.userName = "";
+        this.username = "";
         this.password = "";
         this.email = "";
-        this.fName = "";
-        this.lName = "";
+        this.firstName = "";
+        this.lastName = "";
         this.phone = "";
         this.age = 0;
         this.address = "";
     }
 
-    public User(String userName, String password, String email, String fName, String lName, String phone, int age, String address) {
-        this.userName = userName;
+    public User(String username, String password, String email, String firstName, String lastName, String phone, int age, String address) {
+        this.username = username;
         this.password = password;
         this.email = email;
-        this.fName = fName;
-        this.lName = lName;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.phone = phone;
         this.age = age;
         this.address = address;
     }
 
-    public String getuserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setuserName(String userName) {
+    public void setUsername(String username) {
 
-        this.userName = userName;
+        this.username = username;
     }
 
     public String getPassword() {
@@ -57,20 +57,20 @@ public class User {
         this.email = email;
     }
 
-    public String getfName() {
-        return fName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setfName(String fName) {
-        this.fName = fName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getlName() {
-        return lName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setlName(String lName) {
-        this.lName = lName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getPhone() {
@@ -97,9 +97,9 @@ public class User {
         this.address = address;
     }
 
-    public void setInfo(String userName, String password){
-        this.userName = userName;
+    public void setInfo(String username, String password){
+        this.username = username;
         this.password = password;
-        System.out.println("Info set: Username - " + this.userName + ", Password - " + this.password);
+        System.out.println("Info set: Username - " + this.username + ", Password - " + this.password);
     }
 }

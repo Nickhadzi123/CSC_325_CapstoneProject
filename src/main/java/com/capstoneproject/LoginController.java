@@ -55,7 +55,7 @@ public class LoginController {
     private boolean authenticateUser(String username, String password) {
         // Placeholder for authentication logic (replace with your actual authentication mechanism)
         // Example: Check against a database or hardcoded credentials
-        return username.equals("exampleUser") && password.equals("examplePassword");
+        return username.equals("User") && password.equals("Password");
     }
 
     public void registerButtonClicked(ActionEvent actionEvent) {
