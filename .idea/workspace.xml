@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a56826ec-5664-46d7-ae96-151e61a81abb" name="Changes" comment="registration fix">
+    <list default="true" id="a56826ec-5664-46d7-ae96-151e61a81abb" name="Changes" comment="list fix">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstoneproject/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/capstoneproject/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstoneproject/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/capstoneproject/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstoneproject/ForeverHomeFinderEmployee.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,23 +49,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/nickh/IdeaProjects/CSC_325_CapstoneProject",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nickh/IdeaProjects/CSC_325_CapstoneProject&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\nickh\IdeaProjects\CSC_325_CapstoneProject\src\main\resources" />
@@ -128,7 +128,10 @@
       <workItem from="1699988232448" duration="657000" />
       <workItem from="1700161148831" duration="706000" />
       <workItem from="1701194765216" duration="25000" />
-      <workItem from="1701196536406" duration="344000" />
+      <workItem from="1701196536406" duration="1585000" />
+      <workItem from="1701207913831" duration="594000" />
+      <workItem from="1701354732821" duration="3053000" />
+      <workItem from="1701369897796" duration="659000" />
     </task>
     <task id="LOCAL-00001" summary="creating setters getters and constructors for the User class">
       <option name="closed" value="true" />
@@ -186,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700583855090</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="list fix">
+      <option name="closed" value="true" />
+      <created>1701196905969</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701196905969</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,7 +245,8 @@
     <MESSAGE value="userName bad" />
     <MESSAGE value="fixed problems login confirmation working" />
     <MESSAGE value="registration fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="registration fix" />
+    <MESSAGE value="list fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="list fix" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CSC_325_CapstoneProject$ForeverHomeFinderMain.ic" NAME="ForeverHomeFinderMain Coverage Results" MODIFIED="1697552603008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
