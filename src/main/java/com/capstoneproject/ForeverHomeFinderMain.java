@@ -56,7 +56,7 @@ public class ForeverHomeFinderMain extends Application {
 
             EmployeeDashboardController employeeDashboardController = loader.getController();
             employeeDashboardController.initialize(user); // Initialize employee data
-
+            employeeDashboardController.loadAnimals();
         } catch (IOException e) {
             e.printStackTrace();
         }

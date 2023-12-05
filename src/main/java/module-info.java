@@ -1,4 +1,5 @@
 module com.capstoneproject {
+    opens com.capstoneproject to google.cloud.firestore, javafx.fxml;
     requires javafx.controls;
     requires javafx.fxml;
     requires google.cloud.firestore;
@@ -10,6 +11,5 @@ module com.capstoneproject {
     requires google.cloud.core;
 
 
-    opens com.capstoneproject to javafx.fxml;
     exports com.capstoneproject;
 }
