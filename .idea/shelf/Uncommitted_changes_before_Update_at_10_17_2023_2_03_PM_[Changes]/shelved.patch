@@ -1,0 +1,47 @@
+Index: src/main/resources/com/example/capstoneproject/ForeverHomeFinderGUI-view.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.geometry.Insets?>\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.CheckBox?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.PasswordField?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.layout.VBox?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<VBox alignment=\"TOP_CENTER\" prefHeight=\"278.0\" prefWidth=\"327.0\" spacing=\"20.0\" xmlns=\"http://javafx.com/javafx/20.0.1\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"com.example.capstoneproject.ForeverHomeFinderController\">\r\n  <padding>\r\n    <Insets bottom=\"20.0\" left=\"20.0\" right=\"20.0\" top=\"20.0\" />\r\n  </padding>\r\n\r\n    <!-- Greeting Tag -->\r\n    <Label fx:id=\"welcomeText\" alignment=\"CENTER\" translateY=\"245.0\"/>\r\n\r\n  <!-- Button goes first -->\r\n  <Button fx:id=\"loginButton\" onAction=\"#onLoginButtonClick\" text=\"Log In\" translateY=\"105.0\">\r\n      <font>\r\n         <Font name=\"Comic Sans MS\" size=\"12.0\" />\r\n      </font></Button>\r\n\r\n  <!-- Password Tag -->\r\n  <Label fx:id=\"passwordText\" translateX=\"-125.0\" translateY=\"85.0\" visible=\"false\" />\r\n\r\n  <!-- TextField for user to input username (initially not visible) -->\r\n  <TextField fx:id=\"username\" prefHeight=\"26.0\" prefWidth=\"166.0\" promptText=\"Please enter your username\" translateX=\"30.0\" translateY=\"-5.0\" visible=\"false\">\r\n      <font>\r\n         <Font name=\"Comic Sans MS\" size=\"12.0\" />\r\n      </font></TextField>\r\n\r\n    <!-- Username Tag -->\r\n  <Label fx:id=\"usernameText\" translateX=\"-125.0\" translateY=\"-45.0\" visible=\"false\" />\r\n\r\n  <!-- TextField for user to input password (initially not visible) -->\r\n  <PasswordField fx:id=\"password\" promptText=\"Please enter your password\" translateX=\"30.0\" translateY=\"-40.0\" visible=\"false\">\r\n      <font>\r\n         <Font name=\"Comic Sans MS\" size=\"12.0\" />\r\n      </font></PasswordField>\r\n\r\n    <CheckBox fx:id=\"passwordVisibleBox\" onAction=\"#checkedPasswordBox\" text=\"Show Password\" translateX=\"-100.0\" translateY=\"-50.0\" visible=\"false\" />\r\n\r\n    <!-- TextField for user to Password Visibility (initially not visible) -->\r\n    <TextField fx:id=\"visiblePassword\" promptText=\"Please enter your password\" translateX=\"30.0\" translateY=\"-124.0\" visible=\"false\">\r\n        <font>\r\n            <Font name=\"Comic Sans MS\" size=\"12.0\" />\r\n        </font>\r\n    </TextField>\r\n\r\n    <!-- TextField for user to Escape Button (initially not visible) -->\r\n    <Button fx:id=\"escapeButton\" onAction=\"#onEscapeButtonClick\" translateY=\"-30.0\" text=\"Go Back\" visible=\"false\">\r\n        <font>\r\n            <Font name=\"Comic Sans MS\" size=\"12.0\" />\r\n        </font>\r\n    </Button>\r\n\r\n    <!-- TextField for user to Confirm Button (initially not visible) -->\r\n    <Button fx:id=\"confirmButton\" onAction=\"#loginCheck\" translateY=\"-120.0\" text=\"Confirm\" visible=\"false\">\r\n        <font>\r\n            <Font name=\"Comic Sans MS\" size=\"12.0\" />\r\n        </font>\r\n    </Button>\r\n\r\n    <!-- Confirmation Text Tag -->\r\n    <Label fx:id=\"confirmationText\" alignment=\"CENTER\" translateY=\"-350\" visible=\"false\"/>\r\n</VBox>\r\n
+===================================================================
+diff --git a/src/main/resources/com/example/capstoneproject/ForeverHomeFinderGUI-view.fxml b/src/main/resources/com/example/capstoneproject/ForeverHomeFinderGUI-view.fxml
+--- a/src/main/resources/com/example/capstoneproject/ForeverHomeFinderGUI-view.fxml	
++++ b/src/main/resources/com/example/capstoneproject/ForeverHomeFinderGUI-view.fxml	
+@@ -9,13 +9,13 @@
+ <?import javafx.scene.layout.VBox?>
+ <?import javafx.scene.text.Font?>
+ 
+-<VBox alignment="TOP_CENTER" prefHeight="278.0" prefWidth="327.0" spacing="20.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.capstoneproject.ForeverHomeFinderController">
++<VBox alignment="TOP_CENTER" prefHeight="278.0" prefWidth="327.0" spacing="20.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.capstoneproject.ForeverHomeFinderController">
+   <padding>
+     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+ 
+     <!-- Greeting Tag -->
+-    <Label fx:id="welcomeText" alignment="CENTER" translateY="245.0"/>
++    <Label fx:id="welcomeText" alignment="CENTER" translateY="245.0" />
+ 
+   <!-- Button goes first -->
+   <Button fx:id="loginButton" onAction="#onLoginButtonClick" text="Log In" translateY="105.0">
+@@ -51,19 +51,19 @@
+     </TextField>
+ 
+     <!-- TextField for user to Escape Button (initially not visible) -->
+-    <Button fx:id="escapeButton" onAction="#onEscapeButtonClick" translateY="-30.0" text="Go Back" visible="false">
++    <Button fx:id="escapeButton" onAction="#onEscapeButtonClick" text="Go Back" translateY="-30.0" visible="false">
+         <font>
+             <Font name="Comic Sans MS" size="12.0" />
+         </font>
+     </Button>
+ 
+     <!-- TextField for user to Confirm Button (initially not visible) -->
+-    <Button fx:id="confirmButton" onAction="#loginCheck" translateY="-120.0" text="Confirm" visible="false">
++    <Button fx:id="confirmButton" onAction="#loginCheck" text="Confirm" translateY="-120.0" visible="false">
+         <font>
+             <Font name="Comic Sans MS" size="12.0" />
+         </font>
+     </Button>
+ 
+     <!-- Confirmation Text Tag -->
+-    <Label fx:id="confirmationText" alignment="CENTER" translateY="-350" visible="false"/>
++    <Label fx:id="confirmationText" alignment="CENTER" translateY="-350" visible="false" />
+ </VBox>

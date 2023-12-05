@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.capstoneproject.EmployeeDashboardController">
+
+    <TableView fx:id="animalTableView" prefHeight="400.0" prefWidth="600.0" tableMenuButtonVisible="true">
+        <columns>
+            <!-- Column for 'Name' -->
+            <TableColumn fx:id="nameColumn" text="Name">
+                <cellValueFactory>
+                    <PropertyValueFactory property="name"/>
+                </cellValueFactory>
+            </TableColumn>
+
+            <!-- Column for 'Species' -->
+            <TableColumn fx:id="speciesColumn" text="Species">
+                <cellValueFactory>
+                    <PropertyValueFactory property="species"/>
+                </cellValueFactory>
+            </TableColumn>
+
+            <!-- Column for 'Age' -->
+            <TableColumn fx:id="ageColumn" text="Age">
+                <cellValueFactory>
+                    <PropertyValueFactory property="age"/>
+                </cellValueFactory>
+            </TableColumn>
+
+            <!-- Column for 'Description' -->
+            <TableColumn fx:id="descriptionColumn" text="Description">
+                <cellValueFactory>
+                    <PropertyValueFactory property="description"/>
+                </cellValueFactory>
+            </TableColumn>
+
+            <!-- You can include the 'id' column if needed -->
+            <!-- <TableColumn text="ID">
+                <cellValueFactory>
+                    <PropertyValueFactory property="id"/>
+                </cellValueFactory>
+            </TableColumn> -->
+        </columns>
+    </TableView>
+</VBox>

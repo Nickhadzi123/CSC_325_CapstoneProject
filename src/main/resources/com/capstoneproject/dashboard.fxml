@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+<?import com.capstoneproject.AnimalListCell?>
+
+<VBox xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.capstoneproject.DashboardController">
+    <!-- Your other UI elements go here -->
+    <ScrollPane VBox.vgrow="ALWAYS">
+        <content>
+            <ListView fx:id="animalListView" prefHeight="400.0" prefWidth="600.0">
+            </ListView>
+        </content>
+    </ScrollPane>
+</VBox>
