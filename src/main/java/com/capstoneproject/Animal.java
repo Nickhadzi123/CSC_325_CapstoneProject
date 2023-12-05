@@ -6,7 +6,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Animal {
-    private final SimpleStringProperty id = new SimpleStringProperty();
+    private String id;
     private final SimpleStringProperty name = new SimpleStringProperty();
     private final SimpleStringProperty species = new SimpleStringProperty();
     private final SimpleIntegerProperty age = new SimpleIntegerProperty();
@@ -26,15 +26,11 @@ public class Animal {
     }
 
     public String getId() {
-        return id.get();
-    }
-
-    public SimpleStringProperty idProperty() {
         return id;
     }
 
     public void setId(String id) {
-        this.id.set(id);
+        this.id = id;
     }
 
     public String getName() {

@@ -5,11 +5,14 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.firestore.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.util.converter.NumberStringConverter;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -45,8 +48,9 @@ public class EmployeeDashboardController {
     private TextField ageField;
 
     @FXML
-    private TextField descriptionField;
+    private TextArea descriptionField;
 
+    private Animal selectedAnimal;
     private User authenticatedUser;
     private Firestore db;
     private ObservableList<Animal> animalList;
@@ -56,6 +60,9 @@ public class EmployeeDashboardController {
             initializeFirestore();
             initializeTableView();
             loadAnimals();
+
+        animalTableView.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> handleAnimalSelection(newValue));
         }
 
     private void initializeFirestore() {
@@ -82,7 +89,7 @@ public class EmployeeDashboardController {
 
     void loadAnimals() {
         try {
-            // Retrieve animals from Firestore and add them to the ObservableList
+            // Retrieve animals from Firestore and add them to a temporary ObservableList
             CollectionReference animalsRef = db.collection("animals");
             animalsRef.addSnapshotListener((queryDocumentSnapshots, e) -> {
                 if (e != null) {
@@ -91,12 +98,15 @@ public class EmployeeDashboardController {
                 }
 
                 if (queryDocumentSnapshots != null) {
-                    animalList.clear(); // Clear existing data
-
+                    List<Animal> animals = new ArrayList<>();
                     for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
                         Animal animal = document.toObject(Animal.class);
-                        animalList.add(animal);
+                        animals.add(animal);
                     }
+
+                    // Create a new ObservableList and set it as the items for the TableView
+                    ObservableList<Animal> newAnimalList = FXCollections.observableArrayList(animals);
+                    animalTableView.setItems(newAnimalList);
                 }
             });
         } catch (Exception e) {
@@ -105,12 +115,14 @@ public class EmployeeDashboardController {
     }
 
     @FXML
-    private void addAnimal() throws ExecutionException, InterruptedException {
-        // Get data from input fields
+    void handleAddAnimalButton(ActionEvent event) throws ExecutionException, InterruptedException {
+        // Get values from text fields
         String name = nameField.getText();
         String species = speciesField.getText();
         int age = Integer.parseInt(ageField.getText());
         String description = descriptionField.getText();
+
+        // Validate input (you can add more validation as needed)
 
         // Create a new Animal object
         Animal newAnimal = new Animal(name, species, age, description);
@@ -118,11 +130,10 @@ public class EmployeeDashboardController {
         // Add the new animal to Firestore
         addAnimalToFirestore(newAnimal);
 
-        // Clear input fields
+        // Clear text fields after adding the animal
         clearInputFields();
 
-        // Refresh the table view
-        refreshTableView();
+    refreshTableView();
     }
 
     private void addAnimalToFirestore(Animal animal) throws ExecutionException, InterruptedException {
@@ -130,25 +141,81 @@ public class EmployeeDashboardController {
         DocumentReference docRef = db.collection("animals").add(animal).get();
     }
 
+    private void deleteAnimalFromFirestore(Animal animal) {
+        // Check if animal has a valid ID
+        if (animal.getId() != null && !animal.getId().isEmpty()) {
+            // Delete the animal from the "animals" collection in Firestore
+            db.collection("animals").document(animal.getId()).delete();
+            refreshTableView();
+        } else {
+            // Handle the case where the animal ID is null or empty
+            System.out.println("Invalid animal ID");
+        }
+    }
     @FXML
-    private void deleteAnimal() {
-        // Get selected animal
+    private void handleDeleteAnimalButton(ActionEvent event) {
         Animal selectedAnimal = animalTableView.getSelectionModel().getSelectedItem();
-
         if (selectedAnimal != null) {
-            // Delete the selected animal from Firestore
             deleteAnimalFromFirestore(selectedAnimal);
+            refreshTableView();
+        }
+    }
+    private void updateAnimalInFirestore(Animal animal) {
+        try {
+            // Update the animal in the "animals" collection in Firestore
+            // Ensure the animal has a valid ID
+            if (animal.getId() != null && !animal.getId().isEmpty()) {
+                DocumentReference docRef = db.collection("animals").document(animal.getId());
+                docRef.set(animal);
+            } else {
+                // Handle the case where the animal ID is null or empty
+                System.out.println("Invalid animal ID");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    private void handleAnimalSelection(Animal selected) {
+        if (selected != null) {
+            // Unbind the text fields from the previously selected animal (if any)
+            unbindTextFields();
 
-            // Remove the selected animal from the table view
-            animalTableView.getItems().remove(selectedAnimal);
+            // Bind text fields to the selected animal's properties
+            nameField.textProperty().bindBidirectional(selected.nameProperty());
+            speciesField.textProperty().bindBidirectional(selected.speciesProperty());
+            ageField.textProperty().bindBidirectional(selected.ageProperty(), new NumberStringConverter());
+            descriptionField.textProperty().bindBidirectional(selected.descriptionProperty());
+
+            // Keep track of the selected animal
+            selectedAnimal = selected;
+        } else {
+            // If no animal is selected, clear the text fields and reset the selectedAnimal
+            clearInputFields();
+            selectedAnimal = null;
         }
     }
 
-    private void deleteAnimalFromFirestore(Animal animal) {
-        // Delete the animal from the "animals" collection in Firestore
-        db.collection("animals").document(animal.getName()).delete();
-    }
+    @FXML
+    void handleEditAnimalButton(ActionEvent event) {
+        if (selectedAnimal != null) {
+            // Update the selected animal in Firestore
+            updateAnimalInFirestore(selectedAnimal);
 
+            // Clear the selection and reset text fields
+            animalTableView.getSelectionModel().clearSelection();
+            clearInputFields();
+            refreshTableView();
+        }
+    }
+    private void unbindTextFields() {
+        if (selectedAnimal != null) {
+            // Unbind text fields from the currently selected animal
+            nameField.textProperty().unbindBidirectional(selectedAnimal.nameProperty());
+            speciesField.textProperty().unbindBidirectional(selectedAnimal.speciesProperty());
+            ageField.textProperty().unbindBidirectional(selectedAnimal.ageProperty());
+            descriptionField.textProperty().unbindBidirectional(selectedAnimal.descriptionProperty());
+        }
+    }
     private void clearInputFields() {
         nameField.clear();
         speciesField.clear();
