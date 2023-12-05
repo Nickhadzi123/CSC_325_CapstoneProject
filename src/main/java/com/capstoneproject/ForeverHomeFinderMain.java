@@ -47,7 +47,21 @@ public class ForeverHomeFinderMain extends Application {
             e.printStackTrace();
         }
     }
-    public void showMainApplication() {
+    public void showEmployeeDashboard(User user) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("employeeDashboard.fxml"));
+            Parent root = loader.load();
+            primaryStage.setTitle("Employee Dashboard");
+            primaryStage.setScene(new Scene(root));
+
+            EmployeeDashboardController employeeDashboardController = loader.getController();
+            employeeDashboardController.initialize(user); // Initialize employee data
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void showMainApplication(User user) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard.fxml"));
             Parent root = loader.load();
@@ -55,7 +69,7 @@ public class ForeverHomeFinderMain extends Application {
             primaryStage.setScene(new Scene(root));
 
             DashboardController dashboardController = loader.getController();
-            dashboardController.initialize(); // Initialize animal list
+            dashboardController.initialize(user); // Initialize animal list
 
         } catch (IOException e) {
             e.printStackTrace();

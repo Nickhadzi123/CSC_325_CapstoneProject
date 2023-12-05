@@ -47,17 +47,21 @@ public class LoginController {
         String password = passwordField.getText();
 
         // Perform actual login authentication logic here
-        boolean authenticationSuccessful = authenticateUser(username, password);
+        User authenticatedUser = authenticateUser(username, password);
 
-        if (authenticationSuccessful) {
-            // If login successful, proceed to the main application or user dashboard
-            mainApp.showMainApplication(); // Method to display the main application or dashboard
+        if (authenticatedUser != null) {
+            // If login successful, load the appropriate dashboard
+            if (authenticatedUser.isEmployee()) {
+                mainApp.showEmployeeDashboard(authenticatedUser);
+            } else {
+                mainApp.showMainApplication(authenticatedUser);
+            }
         } else {
             showAlert("Login Failed", "Invalid username or password. Please try again.");
         }
     }
 
-    private boolean authenticateUser(String username, String password) {
+    private User authenticateUser(String username, String password) {
         try {
             // Initialize Firestore
             FileInputStream serviceAccount = new FileInputStream("src/main/resources/key.json");
@@ -79,7 +83,20 @@ public class LoginController {
                 String storedPassword = (String) userData.get("password");
                 if (storedPassword.equals(password)) {
                     // Passwords match, authentication successful
-                    return true;
+
+                    // Create a User object with the retrieved data
+                    User authenticatedUser = new User();
+                    authenticatedUser.setUsername(username);
+                    authenticatedUser.setPassword(storedPassword);
+                    authenticatedUser.setEmail((String) userData.get("email"));
+                    authenticatedUser.setFirstName((String) userData.get("firstName"));
+                    authenticatedUser.setLastName((String) userData.get("lastName"));
+                    authenticatedUser.setPhone((String) userData.get("phone"));
+                    authenticatedUser.setAge(((Long) userData.get("age")).intValue());
+                    authenticatedUser.setAddress((String) userData.get("address"));
+                    authenticatedUser.setEmployee((boolean) userData.get("isEmployee"));
+
+                    return authenticatedUser;
                 }
             }
         } catch (IOException | InterruptedException | ExecutionException e) {
@@ -87,9 +104,8 @@ public class LoginController {
         }
 
         // Authentication failed
-        return false;
+        return null;
     }
-
     public void registerButtonClicked(ActionEvent actionEvent) {
         mainApp.showRegistrationScene();
     }

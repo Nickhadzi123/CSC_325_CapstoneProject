@@ -19,19 +19,16 @@ public class User {
     private String phone;
     private int age;
     private String address;
-    //constructor for User
+    private boolean isEmployee;
+
+    // Constructors
+
     public User() {
-        this.username = "";
-        this.password = "";
-        this.email = "";
-        this.firstName = "";
-        this.lastName = "";
-        this.phone = "";
-        this.age = 0;
-        this.address = "";
+        // Default constructor
     }
 
-    public User(String username, String password, String email, String firstName, String lastName, String phone, int age, String address) {
+    public User(String username, String password, String email, String firstName, String lastName,
+                String phone, int age, String address) {
         this.username = username;
         this.password = password;
         this.email = email;
@@ -40,14 +37,16 @@ public class User {
         this.phone = phone;
         this.age = age;
         this.address = address;
+        this.isEmployee = isEmployee;
     }
+
+    // Getters and setters
 
     public String getUsername() {
         return username;
     }
 
     public void setUsername(String username) {
-
         this.username = username;
     }
 
@@ -105,6 +104,14 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public boolean isEmployee() {
+        return isEmployee;
+    }
+
+    public void setEmployee(boolean employee) {
+        isEmployee = employee;
     }
 
     public void registerUser() throws IOException, ExecutionException, InterruptedException {
