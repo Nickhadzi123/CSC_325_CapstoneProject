@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a56826ec-5664-46d7-ae96-151e61a81abb" name="Changes" comment="changed to observable list">
+    <list default="true" id="a56826ec-5664-46d7-ae96-151e61a81abb" name="Changes" comment="fixed db">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstoneproject/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/capstoneproject/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstoneproject/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/capstoneproject/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +133,7 @@
       <workItem from="1701354732821" duration="3053000" />
       <workItem from="1701369897796" duration="1936000" />
       <workItem from="1701698705444" duration="4081000" />
-      <workItem from="1701736036453" duration="804000" />
+      <workItem from="1701736036453" duration="3853000" />
     </task>
     <task id="LOCAL-00001" summary="creating setters getters and constructors for the User class">
       <option name="closed" value="true" />
@@ -207,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701370726952</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fixed db">
+      <option name="closed" value="true" />
+      <created>1701737077530</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701737077530</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +265,8 @@
     <MESSAGE value="registration fix" />
     <MESSAGE value="list fix" />
     <MESSAGE value="changed to observable list" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed to observable list" />
+    <MESSAGE value="fixed db" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed db" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CSC_325_CapstoneProject$ForeverHomeFinderMain.ic" NAME="ForeverHomeFinderMain Coverage Results" MODIFIED="1697552603008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

@@ -1,5 +1,11 @@
 package com.capstoneproject;
 
+import com.google.api.core.ApiFuture;
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.firestore.DocumentReference;
+import com.google.cloud.firestore.DocumentSnapshot;
+import com.google.cloud.firestore.Firestore;
+import com.google.cloud.firestore.FirestoreOptions;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -9,7 +15,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 public class LoginController {
 
@@ -22,11 +32,6 @@ public class LoginController {
     private ImageView logoImageView;
     private ForeverHomeFinderMain mainApp;
 
-    private ArrayList<User> userList;
-
-    public void setUserList(ArrayList<User> userList) {
-        this.userList = userList;
-    }
     public void initialize() {
         // This method will be automatically called when the FXML is loaded
         Image image = new Image(getClass().getResourceAsStream("/FHFlogo.png"));
@@ -53,9 +58,36 @@ public class LoginController {
     }
 
     private boolean authenticateUser(String username, String password) {
-        // Placeholder for authentication logic (replace with your actual authentication mechanism)
-        // Example: Check against a database or hardcoded credentials
-        return username.equals("User") && password.equals("Password");
+        try {
+            // Initialize Firestore
+            FileInputStream serviceAccount = new FileInputStream("src/main/resources/key.json");
+            FirestoreOptions firestoreOptions = FirestoreOptions.getDefaultInstance().toBuilder()
+                    .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+                    .build();
+
+            Firestore db = firestoreOptions.getService();
+
+            // Retrieve the user document from the "users" collection
+            DocumentReference docRef = db.collection("users").document(username);
+            ApiFuture<DocumentSnapshot> future = docRef.get();
+
+            DocumentSnapshot document = future.get();
+            if (document.exists()) {
+                Map<String, Object> userData = document.getData();
+
+                // Validate the password (replace with your actual password validation logic)
+                String storedPassword = (String) userData.get("password");
+                if (storedPassword.equals(password)) {
+                    // Passwords match, authentication successful
+                    return true;
+                }
+            }
+        } catch (IOException | InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        // Authentication failed
+        return false;
     }
 
     public void registerButtonClicked(ActionEvent actionEvent) {
