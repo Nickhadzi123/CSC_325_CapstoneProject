@@ -18,7 +18,8 @@ public class Animal {
         // Default constructor required for Firestore deserialization
     }
 
-    public Animal(String name, String species, int age, String description) {
+    public Animal(String id, String name, String species, int age, String description) {
+        this.id = id;
         this.name.set(name);
         this.species.set(species);
         this.age.set(age);

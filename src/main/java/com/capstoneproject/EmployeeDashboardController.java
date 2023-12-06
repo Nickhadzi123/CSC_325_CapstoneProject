@@ -125,20 +125,25 @@ public class EmployeeDashboardController {
         // Validate input (you can add more validation as needed)
 
         // Create a new Animal object
-        Animal newAnimal = new Animal(name, species, age, description);
+        Animal newAnimal = new Animal("", name, species, age, description);
 
         // Add the new animal to Firestore
         addAnimalToFirestore(newAnimal);
 
         // Clear text fields after adding the animal
         clearInputFields();
-
-    refreshTableView();
+        refreshTableView();
     }
 
     private void addAnimalToFirestore(Animal animal) throws ExecutionException, InterruptedException {
         // Add the new animal to the "animals" collection in Firestore
         DocumentReference docRef = db.collection("animals").add(animal).get();
+
+        // Set the actual ID from Firestore to the Animal object
+        String actualId = docRef.getId();
+        animal.setId(actualId);
+        // Update the animal in Firestore with the actual ID
+        updateAnimalInFirestore(animal);
     }
 
     private void deleteAnimalFromFirestore(Animal animal) {
@@ -202,7 +207,9 @@ public class EmployeeDashboardController {
             updateAnimalInFirestore(selectedAnimal);
 
             // Clear the selection and reset text fields
-            animalTableView.getSelectionModel().clearSelection();
+            if (animalTableView.getSelectionModel().getSelectedItem() != null) {
+                animalTableView.getSelectionModel().clearSelection();
+            }
             clearInputFields();
             refreshTableView();
         }
@@ -225,7 +232,6 @@ public class EmployeeDashboardController {
 
     private void refreshTableView() {
         // Clear the table and reload animals from Firestore
-        animalTableView.getItems().clear();
         loadAnimals();
     }
 }
