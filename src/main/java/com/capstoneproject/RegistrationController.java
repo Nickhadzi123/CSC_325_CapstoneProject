@@ -49,7 +49,6 @@ public class RegistrationController {
     public void setLoginController(LoginController loginController) {
         this.loginController = loginController;
     }
-    private ArrayList<User> userList = new ArrayList<>();
 
     private Stage stage;
     private ForeverHomeFinderMain mainApp;
