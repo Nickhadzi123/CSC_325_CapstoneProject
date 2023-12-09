@@ -5,12 +5,16 @@ import javafx.beans.value.ObservableValue;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Animal {
     private String id;
     private final SimpleStringProperty name = new SimpleStringProperty();
     private final SimpleStringProperty species = new SimpleStringProperty();
     private final SimpleIntegerProperty age = new SimpleIntegerProperty();
     private final SimpleStringProperty description = new SimpleStringProperty();
+    private List<Appointment> appointments = new ArrayList<>();
 
     // Constructors, getters, and setters...
 
@@ -80,6 +84,12 @@ public class Animal {
 
     public void setDescription(String description) {
         this.description.set(description);
+    }
+    public List<Appointment> getAppointments() {
+        return appointments;
+    }
+    public void setAppointments(List<Appointment> appointments) {
+        this.appointments = appointments;
     }
 
     @Override

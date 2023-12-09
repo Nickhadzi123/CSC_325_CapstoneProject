@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a56826ec-5664-46d7-ae96-151e61a81abb" name="Changes" comment="Search funtion added.">
+    <list default="true" id="a56826ec-5664-46d7-ae96-151e61a81abb" name="Changes" comment="Fixed user dash.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/capstoneproject/Appointment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstoneproject/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/capstoneproject/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/capstoneproject/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/capstoneproject/dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstoneproject/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/capstoneproject/Animal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -151,7 +151,7 @@
       <workItem from="1701908339751" duration="14000" />
       <workItem from="1701909900641" duration="255000" />
       <workItem from="1701971465999" duration="154000" />
-      <workItem from="1701971994324" duration="10033000" />
+      <workItem from="1701971994324" duration="11222000" />
     </task>
     <task id="LOCAL-00001" summary="creating setters getters and constructors for the User class">
       <option name="closed" value="true" />
@@ -305,7 +305,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702155104520</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Fixed user dash.">
+      <option name="closed" value="true" />
+      <created>1702158331312</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1702158331312</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,7 +345,8 @@
     <MESSAGE value="Table functionality almost complete, working through some errors." />
     <MESSAGE value="Employee table functions completely with add, edit and delete. Will add a search function to parse through the table." />
     <MESSAGE value="Search funtion added." />
-    <option name="LAST_COMMIT_MESSAGE" value="Search funtion added." />
+    <MESSAGE value="Fixed user dash." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed user dash." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CSC_325_CapstoneProject$ForeverHomeFinderMain.ic" NAME="ForeverHomeFinderMain Coverage Results" MODIFIED="1697552603008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
