@@ -12,6 +12,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
 import javafx.util.converter.NumberStringConverter;
 
 import java.io.FileInputStream;
@@ -20,11 +21,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
+import java.util.stream.Collectors;
 
 public class EmployeeDashboardController {
 
     @FXML
     private TableView<Animal> animalTableView;
+
+    @FXML
+    private TextField searchField;
 
     @FXML
     private TableColumn<Animal, String> nameColumn;
@@ -61,6 +66,12 @@ public class EmployeeDashboardController {
             initializeTableView();
             loadAnimals();
 
+        searchField.setOnKeyPressed(event -> {
+            if (event.getCode().equals(KeyCode.ENTER)) {
+                handleSearch(new ActionEvent());
+            }
+        });
+
         animalTableView.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> handleAnimalSelection(newValue));
         }
@@ -85,6 +96,7 @@ public class EmployeeDashboardController {
 
         animalList = FXCollections.observableArrayList();
         animalTableView.setItems(animalList);
+        System.out.println("Initial Animal List: " + animalList);
     }
 
     void loadAnimals() {
@@ -106,6 +118,11 @@ public class EmployeeDashboardController {
 
                     // Create a new ObservableList and set it as the items for the TableView
                     ObservableList<Animal> newAnimalList = FXCollections.observableArrayList(animals);
+                    animalList = newAnimalList;
+
+                    // Add this line to print the content of newAnimalList
+                    System.out.println("Animals List (after update): " + newAnimalList);
+
                     animalTableView.setItems(newAnimalList);
                 }
             });
@@ -213,6 +230,27 @@ public class EmployeeDashboardController {
             clearInputFields();
             refreshTableView();
         }
+    }
+    @FXML
+    void handleSearch(ActionEvent event) {
+        String searchText = searchField.getText().toLowerCase();
+
+        // Debug print
+        System.out.println("Search Text: " + searchText);
+
+        // Filter the animalList based on the search criteria (case-insensitive)
+        List<Animal> filteredList = animalList.stream()
+                .filter(animal -> animal.getName().toLowerCase().contains(searchText)
+                        || animal.getSpecies().toLowerCase().contains(searchText)
+                        || String.valueOf(animal.getAge()).contains(searchText)
+                        || animal.getDescription().toLowerCase().contains(searchText))
+                .collect(Collectors.toList());
+
+        // Debug print
+        System.out.println("Filtered List: " + filteredList);
+
+        // Update the TableView with the filtered list
+        animalTableView.setItems(FXCollections.observableArrayList(filteredList));
     }
     private void unbindTextFields() {
         if (selectedAnimal != null) {

@@ -24,8 +24,9 @@
          </font>
       </Label>
       <VBox layoutX="177.0">
+         <TextField fx:id="searchField" onAction="#handleSearch" promptText="Search..." />
       
-          <TableView fx:id="animalTableView" prefHeight="400.0" prefWidth="403.0" tableMenuButtonVisible="true">
+          <TableView fx:id="animalTableView" prefHeight="370.0" prefWidth="403.0" tableMenuButtonVisible="true">
               <columns>
                   <!-- Column for 'Name' -->
                   <TableColumn fx:id="nameColumn" prefWidth="87.00000256299973" text="Name">
