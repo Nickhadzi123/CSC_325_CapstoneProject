@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a56826ec-5664-46d7-ae96-151e61a81abb" name="Changes" comment="Employee table functions completely with add, edit and delete. Will add a search function to parse through the table.">
+    <list default="true" id="a56826ec-5664-46d7-ae96-151e61a81abb" name="Changes" comment="Search funtion added.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstoneproject/EmployeeDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/capstoneproject/EmployeeDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/capstoneproject/employeeDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/capstoneproject/employeeDashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstoneproject/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/capstoneproject/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/capstoneproject/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/capstoneproject/dashboard.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +151,7 @@
       <workItem from="1701908339751" duration="14000" />
       <workItem from="1701909900641" duration="255000" />
       <workItem from="1701971465999" duration="154000" />
-      <workItem from="1701971994324" duration="6896000" />
+      <workItem from="1701971994324" duration="10033000" />
     </task>
     <task id="LOCAL-00001" summary="creating setters getters and constructors for the User class">
       <option name="closed" value="true" />
@@ -297,7 +297,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701974422414</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Search funtion added.">
+      <option name="closed" value="true" />
+      <created>1702155104520</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1702155104520</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,7 +336,8 @@
     <MESSAGE value="Made employee only menu, added database connection so animals are viewable through a table." />
     <MESSAGE value="Table functionality almost complete, working through some errors." />
     <MESSAGE value="Employee table functions completely with add, edit and delete. Will add a search function to parse through the table." />
-    <option name="LAST_COMMIT_MESSAGE" value="Employee table functions completely with add, edit and delete. Will add a search function to parse through the table." />
+    <MESSAGE value="Search funtion added." />
+    <option name="LAST_COMMIT_MESSAGE" value="Search funtion added." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CSC_325_CapstoneProject$ForeverHomeFinderMain.ic" NAME="ForeverHomeFinderMain Coverage Results" MODIFIED="1697552603008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
