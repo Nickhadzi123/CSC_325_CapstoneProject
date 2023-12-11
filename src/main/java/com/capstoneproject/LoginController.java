@@ -36,6 +36,7 @@ public class LoginController {
         // This method will be automatically called when the FXML is loaded
         Image image = new Image(getClass().getResourceAsStream("/FHFlogo.png"));
         logoImageView.setImage(image);
+
     }
 
     public void setMainApplication(ForeverHomeFinderMain mainApp) {
@@ -94,7 +95,14 @@ public class LoginController {
                     authenticatedUser.setPhone((String) userData.get("phone"));
                     authenticatedUser.setAge(((Long) userData.get("age")).intValue());
                     authenticatedUser.setAddress((String) userData.get("address"));
-                    authenticatedUser.setEmployee((boolean) userData.get("isEmployee"));
+
+                    Object isEmployeeObject = userData.get("isEmployee");
+                    if (isEmployeeObject instanceof Boolean) {
+                        authenticatedUser.setEmployee((Boolean) isEmployeeObject);
+                    } else {
+                        // Default to false if the isEmployee field is missing or null
+                        authenticatedUser.setEmployee(false);
+                    }
 
                     return authenticatedUser;
                 }

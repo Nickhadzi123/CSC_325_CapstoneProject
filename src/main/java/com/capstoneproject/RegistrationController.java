@@ -70,6 +70,7 @@ public class RegistrationController {
         String email = emailField.getText();
         String phoneNumber = phoneNumberField.getText();
         String address = addressField.getText();
+        boolean isEmployee = false;
 
         // Validate age input
         int age = 0;
@@ -91,7 +92,7 @@ public class RegistrationController {
             Firestore db = firestoreOptions.getService();
 
             // Register the user with Firestore
-            User newUser = new User(username, password, email, firstName, lastName, phoneNumber, age, address);
+            User newUser = new User(username, password, email, firstName, lastName, phoneNumber, age, address, isEmployee);
             newUser.registerUser();
 
             showAlert("Registration Successful", "Welcome, " + username + "!" + "\n" + "Please log in to continue.", Alert.AlertType.INFORMATION);

@@ -28,7 +28,7 @@ public class User {
     }
 
     public User(String username, String password, String email, String firstName, String lastName,
-                String phone, int age, String address) {
+                String phone, int age, String address, boolean isEmployee) {
         this.username = username;
         this.password = password;
         this.email = email;
@@ -37,7 +37,7 @@ public class User {
         this.phone = phone;
         this.age = age;
         this.address = address;
-        this.isEmployee = isEmployee;
+        this.isEmployee = false;
     }
 
     // Getters and setters
