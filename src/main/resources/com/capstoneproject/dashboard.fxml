@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
@@ -14,11 +15,11 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c17700" height="409.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="174.0" />
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="5.0" prefHeight="68.0" prefWidth="165.0" text="Welcome to the Adoption Center!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
-            <Font name="Arial Rounded MT Bold" size="16.0" />
+            <Font name="Arial Rounded MT Bold" size="19.0" />
          </font>
       </Label>
       <VBox layoutX="174.0" prefHeight="408.0" prefWidth="428.0">
-         <TextField fx:id="searchField1" promptText="Search..." />
+         <TextField fx:id="searchFieldUser" promptText="Search..." />
           <!-- Your other UI elements go here -->
           <ScrollPane prefHeight="402.0" prefWidth="441.0" VBox.vgrow="ALWAYS">
               <content>
@@ -27,5 +28,11 @@
               </content>
           </ScrollPane>
       </VBox>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="84.0" prefHeight="93.0" prefWidth="165.0" text="Please double click an animal to schedule an adoption appointment with one of our agencies." textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="logoImageView" fitHeight="190.0" fitWidth="205.0" layoutX="-15.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

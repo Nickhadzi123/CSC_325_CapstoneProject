@@ -94,7 +94,6 @@ public class Animal {
 
     @Override
     public String toString() {
-        return String.valueOf(name); // Display the name of the animal in the ListView
+        return getName();
     }
-
 }

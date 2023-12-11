@@ -8,14 +8,18 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.util.Callback;
+import javafx.scene.control.ButtonType;
 
 public class DashboardController {
 
@@ -23,16 +27,74 @@ public class DashboardController {
     private ListView<Animal> animalListView; // Displaying Animal objects in the ListView
 
     @FXML
-    private TextField searchField;
+    private TextField searchFieldUser;
+
+    @FXML
+    private ImageView logoImageView;
 
     private Firestore db;
     private ObservableList<Animal> animalList;
 
     @FXML
     public void initialize(User user) {
+        Image logoImage = new Image("/userlogo-removebg-preview.png");  // Adjust the path accordingly
+        logoImageView.setImage(logoImage);
+
         initializeFirestore();
         initializeListView();
         loadAnimals();
+
+        animalListView.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+                Animal selectedAnimal = animalListView.getSelectionModel().getSelectedItem();
+                if (selectedAnimal != null) {
+                    showAppointmentConfirmationDialog(selectedAnimal);
+                }
+            }
+        });
+    }
+    private void showAppointmentConfirmationDialog(Animal animal) {
+        Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmationAlert.setTitle("Adoption Appointment");
+        confirmationAlert.setHeaderText("Schedule an adoption appointment?");
+        confirmationAlert.setContentText("Do you want to schedule an adoption appointment for " + animal.getName() + "?");
+
+        confirmationAlert.showAndWait().ifPresent(response -> {
+            if (response == ButtonType.OK) {
+                showDateTimeInputDialog(animal);
+            }
+        });
+    }
+    private void showDateTimeInputDialog(Animal animal) {
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Adoption Appointment");
+        dialog.setHeaderText("Enter Date and Time");
+        dialog.setContentText("Please enter the date and time for the adoption appointment (e.g., 2023-12-31 15:30):");
+
+        // Set up a custom callback to validate user input
+        Callback<String, Boolean> inputValidator = input -> {
+            // Add your validation logic here
+            // For simplicity, we assume a basic format validation
+            return input.matches("\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}");
+        };
+        dialog.setResultConverter(input -> inputValidator.call(String.valueOf(input)) ? String.valueOf(input) : null);
+
+        // Show the dialog and wait for user input
+        dialog.showAndWait().ifPresent(dateTime -> showConfirmationMessage(animal, dateTime));
+    }
+
+    private void showConfirmationMessage(Animal animal, String dateTime) {
+        System.out.println("Show Confirmation Message");
+        System.out.println("Animal Name: " + animal.getName());
+        System.out.println("Date Time: " + dateTime);
+
+        Alert confirmationAlert = new Alert(Alert.AlertType.INFORMATION);
+        confirmationAlert.setTitle("Adoption Appointment Scheduled");
+        confirmationAlert.setHeaderText("Appointment Scheduled Successfully");
+        confirmationAlert.setContentText("You have successfully scheduled an adoption appointment for "
+                + animal.getName() + " on " + dateTime);
+
+        confirmationAlert.show();
     }
 
     private void initializeFirestore() {
@@ -94,5 +156,12 @@ public class DashboardController {
             e.printStackTrace();
         }
     }
+  private void showAlert(String title, String content) {
+      Alert alert = new Alert(Alert.AlertType.INFORMATION);
+      alert.setTitle(title);
+      alert.setHeaderText(null);
+      alert.setContentText(content);
+      alert.showAndWait();
+  }
 }
 
