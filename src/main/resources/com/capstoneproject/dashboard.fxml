@@ -19,7 +19,7 @@
          </font>
       </Label>
       <VBox layoutX="174.0" prefHeight="408.0" prefWidth="428.0">
-         <TextField fx:id="searchFieldUser" promptText="Search..." />
+         <TextField fx:id="searchFieldUser" onAction="#handleSearchUser" promptText="Search..." />
           <!-- Your other UI elements go here -->
           <ScrollPane prefHeight="402.0" prefWidth="441.0" VBox.vgrow="ALWAYS">
               <content>

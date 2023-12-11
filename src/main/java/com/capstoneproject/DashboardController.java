@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ExecutionException;
+import java.util.stream.Collectors;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,6 +19,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.util.Callback;
 import javafx.scene.control.ButtonType;
 
@@ -52,6 +54,34 @@ public class DashboardController {
                 }
             }
         });
+    }
+    @FXML
+    void handleSearchUser(ActionEvent event) {
+        String searchText = searchFieldUser.getText().toLowerCase();
+
+        // Debug print
+        System.out.println("Search Text: " + searchText);
+
+        // Debug print the original list size
+        System.out.println("Original Animal List: " + animalList.size());
+
+        // Filter the animalList based on the search criteria (case-insensitive)
+        List<Animal> filteredList = animalList.stream()
+                .filter(animal -> {
+                    boolean match = animal.getName().toLowerCase().contains(searchText)
+                            || animal.getSpecies().toLowerCase().contains(searchText)
+                            || String.valueOf(animal.getAge()).contains(searchText)
+                            || animal.getDescription().toLowerCase().contains(searchText);
+                    System.out.println("Animal: " + animal.getName() + ", Match: " + match);
+                    return match;
+                })
+                .collect(Collectors.toList());
+
+        // Debug print the filtered list
+        System.out.println("Filtered List: " + filteredList);
+
+        // Update the TableView with the filtered list
+        animalListView.setItems(FXCollections.observableArrayList(filteredList));
     }
     private void showAppointmentConfirmationDialog(Animal animal) {
         Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -147,9 +177,8 @@ public class DashboardController {
                         animals.add(animal);
                     }
 
-                    // Create a new ObservableList and set it as the items for the ListView
-                    ObservableList<Animal> newAnimalList = FXCollections.observableArrayList(animals);
-                    animalListView.setItems(newAnimalList);
+                    // Update the existing animalList instead of creating a new one
+                    animalList.setAll(animals);
                 }
             });
         } catch (Exception e) {
