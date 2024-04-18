@@ -12,10 +12,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 public class RegistrationController {
@@ -99,7 +97,7 @@ public class RegistrationController {
             switchToLoginScreen();
 
         } catch (IOException | InterruptedException | ExecutionException e) {
-            e.printStackTrace();
+            LoggerUtil.logError(RegistrationController.class, e);
             showAlert("Registration Error", "Failed to register the user. Please try again.", Alert.AlertType.ERROR);
         }
     }
@@ -115,7 +113,7 @@ public class RegistrationController {
             loginController.setMainApplication(mainApp);
 
         } catch (IOException e) {
-            e.printStackTrace();
+            LoggerUtil.logError(RegistrationController.class, e);
             showAlert("Error", "Failed to switch to the login scene.", Alert.AlertType.ERROR);
         }
     }
@@ -130,7 +128,7 @@ public class RegistrationController {
             LoginController loginController = loader.getController();
             loginController.setMainApplication(mainApp);
         } catch (IOException e) {
-            e.printStackTrace();
+            LoggerUtil.logError(RegistrationController.class, e);
             showAlert("Error", "Failed to switch to the login scene.", Alert.AlertType.ERROR);
         }
     }

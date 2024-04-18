@@ -1,6 +1,5 @@
 package com.capstoneproject;
 
-import com.google.api.core.ApiFuture;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.firestore.*;
 import javafx.collections.FXCollections;
@@ -11,16 +10,14 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
 import javafx.util.converter.NumberStringConverter;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.ExecutionException;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class EmployeeDashboardController {
@@ -83,7 +80,7 @@ public class EmployeeDashboardController {
                     .build();
             db = firestoreOptions.getService();
         } catch (IOException e) {
-            e.printStackTrace();
+            LoggerUtil.logError(EmployeeDashboardController.class, e);
             // Handle the exception, e.g., show an error message
         }
     }
@@ -105,7 +102,7 @@ public class EmployeeDashboardController {
             CollectionReference animalsRef = db.collection("animals");
             animalsRef.addSnapshotListener((queryDocumentSnapshots, e) -> {
                 if (e != null) {
-                    e.printStackTrace();
+                    LoggerUtil.logError(EmployeeDashboardController.class, e);
                     return;
                 }
 
@@ -127,7 +124,7 @@ public class EmployeeDashboardController {
                 }
             });
         } catch (Exception e) {
-            e.printStackTrace();
+            LoggerUtil.logError(EmployeeDashboardController.class, e);
         }
     }
 
@@ -194,7 +191,7 @@ public class EmployeeDashboardController {
                 System.out.println("Invalid animal ID");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            LoggerUtil.logError(EmployeeDashboardController.class, e);
         }
     }
     private void handleAnimalSelection(Animal selected) {

@@ -1,17 +1,12 @@
 package com.capstoneproject;
 
-import com.google.api.core.ApiFuture;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.firestore.*;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,7 +14,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
 import javafx.util.Callback;
 import javafx.scene.control.ButtonType;
 
@@ -134,7 +128,7 @@ public class DashboardController {
                     .build();
             db = firestoreOptions.getService();
         } catch (IOException e) {
-            e.printStackTrace();
+            LoggerUtil.logError(DashboardController.class, e);
             // Handle the exception, e.g., show an error message
         }
     }
@@ -182,7 +176,7 @@ public class DashboardController {
                 }
             });
         } catch (Exception e) {
-            e.printStackTrace();
+            LoggerUtil.logError(DashboardController.class, e);
         }
     }
   private void showAlert(String title, String content) {

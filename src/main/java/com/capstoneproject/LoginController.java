@@ -9,15 +9,12 @@ import com.google.cloud.firestore.FirestoreOptions;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
@@ -25,11 +22,11 @@ public class LoginController {
 
     @FXML
     private TextField usernameField;
-
     @FXML
     private PasswordField passwordField;
     @FXML
     private ImageView logoImageView;
+
     private ForeverHomeFinderMain mainApp;
 
     public void initialize() {
@@ -108,7 +105,7 @@ public class LoginController {
                 }
             }
         } catch (IOException | InterruptedException | ExecutionException e) {
-            e.printStackTrace();
+            LoggerUtil.logError(LoginController.class, e);
         }
 
         // Authentication failed
